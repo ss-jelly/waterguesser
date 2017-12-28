@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true
+  },
+  "rules": {
+    "indent": [ "error", 2 ],
+    "linebreak-style": [ "error", "unix" ],
+    "quotes": [ "error", "single" ],
+    "semi": [ "error", "always" ],
+    "new-cap": [ 2, { "capIsNewExceptions": [ "Map", "List" ] } ],
+
+    "no-throw-literal": 2,
+    
+    "class-methods-use-this": "off",
+    "no-else-return": "off",
+    "max-len": "off",
+    "no-multiple-empty-lines": "off",
+    "no-trailing-spaces": "off"
+  }
+}
