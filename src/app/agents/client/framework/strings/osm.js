@@ -13,6 +13,7 @@ module.exports = {
   theirAgeQuestion: 'یاشی',
   theirHeightQuestion: 'بویی',
   theirHairColorQuestion: 'صچ رګی',
+  theirHairLengthQuestion: 'صچ وزون لغی',
 
   estimate: 'طحمین عت بق لم',
 
@@ -21,6 +22,11 @@ module.exports = {
   brown: 'قهوه',
   red: 'قرمزی',
   grey: 'بۉز',
+
+  long: 'وزون',
+  middle: 'ۉرتة',
+  short: 'قصة',
+  bald: 'کل',
 
   formatCurrency: function (moneyAmount) {
     return (moneyAmount || 0).toLocaleString('AR') + ' ' + 'آقچه';

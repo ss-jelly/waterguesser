@@ -220,6 +220,109 @@ describe('Water Bill Estimate Usecase', function () {
     });
   });
 
+  describe('Hair Length', function () {
+    it('should add to the bill estimate 1 for long', function (done) {
+      var expectedDifference = 0;
+      var inputHairLength = descriptionSchema.hairLengths.long;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              hairLength: inputHairLength,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 2 for middle', function (done) {
+      var expectedDifference = 1;
+      var inputHairLength = descriptionSchema.hairLengths.middle;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              hairLength: inputHairLength,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 3 for short', function (done) {
+      var expectedDifference = 2;
+      var inputHairLength = descriptionSchema.hairLengths.short;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              hairLength: inputHairLength,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 4 for bald', function (done) {
+      var expectedDifference = 3;
+      var inputHairLength = descriptionSchema.hairLengths.bald;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              hairLength: inputHairLength,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+  });
+
   describe('Results', function () {
     it('should always be an integer', function () {
       it('should add to the bill estimate half the age as a dollar amount', function (done) {

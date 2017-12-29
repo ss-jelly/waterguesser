@@ -5,6 +5,7 @@ module.exports = {
     age: 'age',
     height: 'height',
     hairColor: 'hairColor',
+    hairLength: 'hairLength',
   },
   get: function (parameterName) {
     parameterName = parameterName.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');

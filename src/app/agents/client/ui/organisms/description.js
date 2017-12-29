@@ -5,6 +5,7 @@ var language = require('../molecules/language');
 var age = require('../molecules/age');
 var height = require('../molecules/height');
 var hairColor = require('../molecules/hair-color');
+var hairLength = require('../molecules/hair-length');
 var submit = require('../molecules/submit');
 
 module.exports = (function (context, properties) {
@@ -13,5 +14,6 @@ module.exports = (function (context, properties) {
     age(context)+
     height(context)+
     hairColor(context)+
+    hairLength(context)+
     submit(context));
 });

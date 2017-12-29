@@ -37,6 +37,11 @@ module.exports = (function (context, properties) {
     output += 'value="'+value+'" ';
   }
 
+  var checked = !!((properties || {}).checked);
+  if (checked === true) {
+    output += 'checked ';
+  }
+
   output += '>';
 
   return output;
