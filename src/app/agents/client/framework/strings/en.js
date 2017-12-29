@@ -11,6 +11,7 @@ module.exports = {
   waterBillEstimatedCostPostamble: '',
 
   theirAgeQuestion: 'Age',
+  theirHeightQuestion: 'Height',
 
   estimate: 'estimate',
 
