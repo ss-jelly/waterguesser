@@ -15,6 +15,7 @@ module.exports = {
   theirHairColorQuestion: 'Saç rengi',
   theirHairLengthQuestion: 'Saç uzunlugu',
   theirEyeColorQuestion: 'Göz rengi',
+  theirFacialHairQuestion: 'Sakal işi',
   
   estimate: 'tahmin et bakalım',
   
@@ -33,6 +34,11 @@ module.exports = {
   middle: 'Orta',
   short: 'Kısa',
   bald: 'Kel',
+
+  stubble: 'Hafif',
+  moustache: 'Bıyıklı',
+  goatee: 'Çene sakalı',
+  beard: 'Sakalı',
 
   formatCurrency: function (moneyAmount) {
     return (moneyAmount || 0).toLocaleString('tr', { style: 'currency', currency: 'TRY' });

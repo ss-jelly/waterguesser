@@ -323,7 +323,7 @@ describe('Water Bill Estimate Usecase', function () {
     });
   });
 
-  describe('Hair Length', function () {
+  describe('Eye Color', function () {
     it('should add to the bill estimate 1 for brown', function (done) {
       var expectedDifference = 0;
       var inputEyeColor = descriptionSchema.eyeColors.brown;
@@ -465,6 +465,109 @@ describe('Water Bill Estimate Usecase', function () {
           .then(function () {
             return usecase.run(Object.assign({}, descriptionSchema.defaults, {
               eyeColor: inputEyeColor,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+  });
+
+  describe('Facial Hair', function () {
+    it('should add to the bill estimate -1 for moustache', function (done) {
+      var expectedDifference = -1;
+      var inputFacialHair = descriptionSchema.facialHairs.moustache;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              facialHair: inputFacialHair,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 2 for stubble', function (done) {
+      var expectedDifference = 0;
+      var inputFacialHair = descriptionSchema.facialHairs.stubble;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              facialHair: inputFacialHair,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 3 for goatee', function (done) {
+      var expectedDifference = 1;
+      var inputFacialHair = descriptionSchema.facialHairs.goatee;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              facialHair: inputFacialHair,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 4 for beard', function (done) {
+      var expectedDifference = 2;
+      var inputFacialHair = descriptionSchema.facialHairs.beard;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              facialHair: inputFacialHair,
             }));
           })
           

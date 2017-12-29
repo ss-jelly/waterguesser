@@ -24,6 +24,11 @@
   visibility: hidden;
 }
 
+.molecules-segmented-control-li-image {
+  width: 60%;
+  margin-top: 2px;
+}
+
 .molecules-segmented-control-li-label {
   display: block;
   margin: 0 -1px -1px 0; /* -1px margin removes double-thickness borders between items */
