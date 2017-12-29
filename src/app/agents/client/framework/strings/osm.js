@@ -15,6 +15,7 @@ module.exports = {
   theirHairColorQuestion: 'صچ رګی',
   theirHairLengthQuestion: 'صچ وزون لغی',
   theirEyeColorQuestion: 'گۉٍز رګی',
+  theirFacialHairQuestion: 'صقل یشی',
 
   estimate: 'طحمین عت بق لم',
 
@@ -33,6 +34,11 @@ module.exports = {
   middle: 'ۉرتة',
   short: 'قصة',
   bald: 'کل',
+
+  stubble: 'خفیف',
+  moustache: 'بیق لئ',
+  goatee: 'چنه صقل لئ',
+  beard: 'صقل',
 
   formatCurrency: function (moneyAmount) {
     return (moneyAmount || 0).toLocaleString('AR') + ' ' + 'آقچه';

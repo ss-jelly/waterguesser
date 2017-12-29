@@ -4,6 +4,7 @@ var li = require('../../atoms/li');
 var input = require('../../atoms/input');
 var label = require('../../atoms/label');
 var ul = require('../../atoms/ul');
+var image = require('../../atoms/image');
 
 require('./style.css');
 
@@ -12,6 +13,7 @@ var ulClassName = 'molecules-segmented-control-ul';
 var liClassName = 'molecules-segmented-control-li';
 var inputClassName = 'molecules-segmented-control-input';
 var liLabelClassName = 'molecules-segmented-control-li-label';
+var liImageClassName = 'molecules-segmented-control-li-image';
 
 module.exports = (function (context, properties) {
   var labelText = (properties || {}).labelText;
@@ -21,10 +23,23 @@ module.exports = (function (context, properties) {
   ((properties || {}).options || []).forEach(function (optionProperties, index) {
     var isChecked = index === 0;
     var inputId = forId + '-' + optionProperties.value;
-    var name = optionProperties.name;
+
+    var displayElement;
+    if (optionProperties.name) {
+      var name = optionProperties.name;
+      displayElement = label(context, { className: liLabelClassName, forId: inputId, text: name });
+    } else if (optionProperties.image) {
+      var imageSource = optionProperties.image;
+      var alt = optionProperties.alt;
+      displayElement = label(context, { className: liLabelClassName, forId: inputId }, 
+        image(context, { className: liImageClassName, imageSource: imageSource, alt: alt }));
+    } else {
+      displayElement = '';
+    }
+
     optionsFlatRendered += li(context, { className: liClassName }, 
       input(context, { className: inputClassName, type: 'radio', checked: isChecked, name: forId, id: inputId, value: optionProperties.value })+
-      label(context, { className: liLabelClassName, forId: inputId, text: name }));
+      displayElement);
   });
 
   return container(context, {},
