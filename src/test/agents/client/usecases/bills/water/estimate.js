@@ -10,11 +10,31 @@ var describe = mocha.describe;
 var it = mocha.it;
 chai.use(chaiAsPromised);
 
+var defaultDescription = {
+  age: 18,
+  height: 170,
+};
+
 describe('Water Bill Estimate Usecase', function () {
   it('should estimate to a default profile', function (done) {
     expect(function () {
       var usecase = createUsecase();
-      expect(usecase.run()).to.eventually.equal(9).and.notify(done);
+      var defaultEstimate;
+      expect(usecase.run(defaultDescription)
+
+        .then(function (estimate) {
+          defaultEstimate = estimate;
+          return Promise.resolve({});
+        })
+
+        .then(function () {
+          return usecase.run();
+        })
+        
+        .then(function (autoEstimate) {
+          return Promise.resolve(autoEstimate === defaultEstimate);
+        })
+      ).to.eventually.be.true.and.notify(done);
     }).to.not.throw();
   });
   
@@ -23,7 +43,7 @@ describe('Water Bill Estimate Usecase', function () {
       expect(function () {
         var usecase = createUsecase();
         var defaultEstimate;
-        expect(usecase.run()
+        expect(usecase.run(defaultDescription)
   
           .then(function (estimate) {
             defaultEstimate = estimate;
@@ -31,15 +51,41 @@ describe('Water Bill Estimate Usecase', function () {
           })
   
           .then(function () {
-            return usecase.run({
+            return usecase.run(Object.assign({}, defaultDescription, {
               age: 20,
-            });
+            }));
           })
           
           .then(function (estimate) {
             return Promise.resolve(estimate - defaultEstimate);
           })
         ).to.eventually.equal(1).and.notify(done);
+      }).to.not.throw();
+    });
+  });
+
+  describe('Height', function () {
+    it('should add to the bill estimate quarter the height as a dollar amount', function (done) {
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(defaultDescription)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, defaultDescription, {
+              height: 178,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(2).and.notify(done);
       }).to.not.throw();
     });
   });
