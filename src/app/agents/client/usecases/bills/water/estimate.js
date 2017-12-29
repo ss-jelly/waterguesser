@@ -28,6 +28,20 @@ module.exports = (function () {
     }
   };
 
+  var hairLengthContribution = function (description) {
+    switch(description.hairLength || descriptionSchema.defaults.hairLength) {
+    case descriptionSchema.hairLengths.middle:
+      return 2;
+    case descriptionSchema.hairLengths.short:
+      return 3;
+    case descriptionSchema.hairLengths.bald:
+      return 4;
+    case descriptionSchema.hairLengths.long:
+    default:
+      return 1;
+    }
+  };
+
   var run = function (description) {
     description = description || {};
 
@@ -36,6 +50,7 @@ module.exports = (function () {
     estimatedBill += ageContribution(description);
     estimatedBill += heightContribution(description);
     estimatedBill += hairColorContribution(description);
+    estimatedBill += hairLengthContribution(description);
 
     return Promise.resolve(Math.floor(estimatedBill));
   };
