@@ -16,5 +16,8 @@ describe('Client Framework: (Rendering) Context: Resources', function () {
     it('should have string resources', function () {
       expect(configureResources({}).resources.strings).to.exist;
     });
+    it('should have image resources', function () {
+      expect(configureResources({}).resources.images).to.exist;
+    });
   });
 });
