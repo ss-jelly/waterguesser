@@ -2,6 +2,7 @@
 module.exports = {
   name: {
     lang: 'lang',
+    age: 'age',
   },
   get: function (parameterName) {
     parameterName = parameterName.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');

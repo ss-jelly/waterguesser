@@ -1,0 +1,21 @@
+
+.molecules-range-slider-label {
+  display: block;
+  margin-bottom: 8px;
+  text-align: start;
+}
+
+.molecules-range-slider-container {
+  width: 100%;
+  display: flex;
+}
+
+.molecules-range-slider-input {
+  flex-grow: 1;
+}
+
+.molecules-range-slider-output {
+  width: 48px;
+  align-self: flex-start;
+  text-align: start;
+}

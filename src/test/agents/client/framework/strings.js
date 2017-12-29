@@ -62,6 +62,18 @@ describe('String Resources', function () {
           expect(createStrings(stringsEn.localizationCode).formatCurrency(123.23)).to.deep.equal('£123.23');
         });
       });
+
+      describe('Numbers', function () {
+        it('should be 0 when undefined', function () {
+          expect(createStrings(stringsEn.localizationCode).formatNumber()).to.deep.equal('0');
+        });
+        it('should be 0 when null', function () {
+          expect(createStrings(stringsEn.localizationCode).formatNumber(null)).to.deep.equal('0');
+        });
+        it('should format the input number amount', function () {
+          expect(createStrings(stringsEn.localizationCode).formatNumber(123.23)).to.deep.equal('123.23');
+        });
+      });
     });
     describe('Turkey', function () {
       it('should be be layout left to right', function () {
@@ -77,6 +89,18 @@ describe('String Resources', function () {
         });
         it('should format the input money amount', function () {
           expect(createStrings(stringsTr.localizationCode).formatCurrency(123.23)).to.deep.equal('₺123,23');
+        });
+      });
+
+      describe('Numbers', function () {
+        it('should be 0 when undefined', function () {
+          expect(createStrings(stringsTr.localizationCode).formatNumber()).to.deep.equal('0');
+        });
+        it('should be 0 when null', function () {
+          expect(createStrings(stringsTr.localizationCode).formatNumber(null)).to.deep.equal('0');
+        });
+        it('should format the input number amount', function () {
+          expect(createStrings(stringsTr.localizationCode).formatNumber(123.23)).to.deep.equal('123,23');
         });
       });
     });
@@ -97,6 +121,18 @@ describe('String Resources', function () {
         });
         it('should format the input money amount', function () {
           expect(createStrings(stringsOsm.localizationCode).formatCurrency(123.23)).to.deep.equal('١٢٣٫٢٣ آقچه');
+        });
+      });
+
+      describe('Numbers', function () {
+        it('should be 0 when undefined', function () {
+          expect(createStrings(stringsOsm.localizationCode).formatNumber()).to.deep.equal('٠');
+        });
+        it('should be 0 when null', function () {
+          expect(createStrings(stringsOsm.localizationCode).formatNumber(null)).to.deep.equal('٠');
+        });
+        it('should format the input number amount', function () {
+          expect(createStrings(stringsOsm.localizationCode).formatNumber(123.23)).to.deep.equal('١٢٣٫٢٣');
         });
       });
     });

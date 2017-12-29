@@ -10,7 +10,14 @@ module.exports = {
   waterBillEstimatedCostPreamble: 'Estimated water bill: ',
   waterBillEstimatedCostPostamble: '',
 
+  theirAgeQuestion: 'Age',
+
+  estimate: 'estimate',
+
   formatCurrency: function (moneyAmount) {
     return (moneyAmount || 0).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
+  },
+  formatNumber: function (number) {
+    return (number || 0).toLocaleString('en-GB');
   },
 };
