@@ -14,6 +14,7 @@ var onPageEnter = function (context) {
     hairLength: browser.queryParameter.get(browser.queryParameter.name.hairLength),
     eyeColor: browser.queryParameter.get(browser.queryParameter.name.eyeColor),
     facialHair: browser.queryParameter.get(browser.queryParameter.name.facialHair),
+    bodyType: browser.queryParameter.get(browser.queryParameter.name.bodyType),
   }).then(function (result) {
     context.setState({
       estimatedWaterBillCost: result,
