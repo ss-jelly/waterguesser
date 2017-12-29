@@ -323,6 +323,159 @@ describe('Water Bill Estimate Usecase', function () {
     });
   });
 
+  describe('Hair Length', function () {
+    it('should add to the bill estimate 1 for brown', function (done) {
+      var expectedDifference = 0;
+      var inputEyeColor = descriptionSchema.eyeColors.brown;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              eyeColor: inputEyeColor,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 2 for grey', function (done) {
+      var expectedDifference = 1;
+      var inputEyeColor = descriptionSchema.eyeColors.grey;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              eyeColor: inputEyeColor,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 3 for green', function (done) {
+      var expectedDifference = 2;
+      var inputEyeColor = descriptionSchema.eyeColors.green;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              eyeColor: inputEyeColor,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 4 for blue', function (done) {
+      var expectedDifference = 3;
+      var inputEyeColor = descriptionSchema.eyeColors.blue;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              eyeColor: inputEyeColor,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 5 for kehribar', function (done) {
+      var expectedDifference = 4;
+      var inputEyeColor = descriptionSchema.eyeColors.kehribar;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              eyeColor: inputEyeColor,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 6 for ela', function (done) {
+      var expectedDifference = 5;
+      var inputEyeColor = descriptionSchema.eyeColors.ela;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              eyeColor: inputEyeColor,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+  });
+
   describe('Results', function () {
     it('should always be an integer', function () {
       it('should add to the bill estimate half the age as a dollar amount', function (done) {

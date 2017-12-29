@@ -25,5 +25,8 @@ describe('Description Entity Schema', function () {
     it('should have a default hairLength', function () {
       expect(descriptionSchema.defaults.hairLength).to.exist;
     });
+    it('should have a default eyeColor', function () {
+      expect(descriptionSchema.defaults.eyeColor).to.exist;
+    });
   });
 });

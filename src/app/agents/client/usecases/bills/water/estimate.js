@@ -42,6 +42,24 @@ module.exports = (function () {
     }
   };
 
+  var eyeColorContribution = function (description) {
+    switch(description.eyeColor || descriptionSchema.defaults.eyeColor) {
+    case descriptionSchema.eyeColors.grey:
+      return 2;
+    case descriptionSchema.eyeColors.green:
+      return 3;
+    case descriptionSchema.eyeColors.blue:
+      return 4;
+    case descriptionSchema.eyeColors.kehribar:
+      return 5;
+    case descriptionSchema.eyeColors.ela:
+      return 6;
+    case descriptionSchema.eyeColors.brown:
+    default:
+      return 1;
+    }
+  };
+
   var run = function (description) {
     description = description || {};
 
@@ -51,6 +69,7 @@ module.exports = (function () {
     estimatedBill += heightContribution(description);
     estimatedBill += hairColorContribution(description);
     estimatedBill += hairLengthContribution(description);
+    estimatedBill += eyeColorContribution(description);
 
     return Promise.resolve(Math.floor(estimatedBill));
   };

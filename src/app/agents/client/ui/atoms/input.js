@@ -1,5 +1,5 @@
 
-module.exports = (function (context, properties) {
+module.exports = (function (context, properties, children) {
   var output = '<input ';
 
   var className = (properties || {}).className;
@@ -42,7 +42,11 @@ module.exports = (function (context, properties) {
     output += 'checked ';
   }
 
-  output += '>';
+  if (children) {
+    output += '/>' + children;
+  } else {
+    output += '>';
+  }
 
   return output;
 });

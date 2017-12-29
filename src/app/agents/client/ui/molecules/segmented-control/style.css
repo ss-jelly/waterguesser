@@ -2,6 +2,7 @@
 .molecules-segmented-control-label-header {
   display: block;
   padding-bottom: 8px;
+  text-align: start;
 }
 
 .molecules-segmented-control-ul {

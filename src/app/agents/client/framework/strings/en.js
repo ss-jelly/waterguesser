@@ -14,6 +14,7 @@ module.exports = {
   theirHeightQuestion: 'Height',
   theirHairColorQuestion: 'Hair Color',
   theirHairLengthQuestion: 'Hair Length',
+  theirEyeColorQuestion: 'Eye Color',
 
   estimate: 'estimate',
 
@@ -22,6 +23,9 @@ module.exports = {
   brown: 'Brown',
   red: 'Red',
   grey: 'Grey',
+
+  green: 'Green',
+  blue: 'Blue',
 
   long: 'Long',
   middle: 'Middle',
