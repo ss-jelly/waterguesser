@@ -8,8 +8,9 @@ var onPageEnter = function (context) {
   html.set.title(context.resources.strings.homePageTitle);
 
   context.usecases.bills.water.estimate.run({
-    age: browser.queryParameter.get(browser.queryParameter.name.age),
-    height: browser.queryParameter.get(browser.queryParameter.name.height),
+    age: parseInt(browser.queryParameter.get(browser.queryParameter.name.age)),
+    height: parseInt(browser.queryParameter.get(browser.queryParameter.name.height)),
+    hairColor: browser.queryParameter.get(browser.queryParameter.name.hairColor),
   }).then(function (result) {
     context.setState({
       estimatedWaterBillCost: result,
