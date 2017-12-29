@@ -1,0 +1,46 @@
+
+.molecules-segmented-control-label-header {
+  display: block;
+  padding-bottom: 8px;
+}
+
+.molecules-segmented-control-ul {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.molecules-segmented-control-li {
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.molecules-segmented-control-input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.molecules-segmented-control-li-label {
+  display: block;
+  margin: 0 -1px -1px 0; /* -1px margin removes double-thickness borders between items */
+  padding: 1em .25em;
+  
+  border: 1px solid #ddd;
+  
+  font: 14px/1.5 sans-serif; 
+  text-align: center;  
+  
+  cursor: pointer;
+}
+
+.molecules-segmented-control-li-label:hover {
+  background: #fafafa;
+}
+
+.molecules-segmented-control-input:checked + .molecules-segmented-control-li-label {
+  background: #eee;
+  color: #333; 
+}

@@ -13,6 +13,7 @@ module.exports = {
   theirAgeQuestion: 'Age',
   theirHeightQuestion: 'Height',
   theirHairColorQuestion: 'Hair Color',
+  theirHairLengthQuestion: 'Hair Length',
 
   estimate: 'estimate',
 
@@ -21,6 +22,11 @@ module.exports = {
   brown: 'Brown',
   red: 'Red',
   grey: 'Grey',
+
+  long: 'Long',
+  middle: 'Middle',
+  short: 'Short',
+  bald: 'Bald',
 
   formatCurrency: function (moneyAmount) {
     return (moneyAmount || 0).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
