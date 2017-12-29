@@ -9,6 +9,7 @@ var onPageEnter = function (context) {
 
   context.usecases.bills.water.estimate.run({
     age: browser.queryParameter.get(browser.queryParameter.name.age),
+    height: browser.queryParameter.get(browser.queryParameter.name.height),
   }).then(function (result) {
     context.setState({
       estimatedWaterBillCost: result,
