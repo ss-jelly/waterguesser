@@ -74,6 +74,18 @@ module.exports = (function () {
     }
   };
 
+  var bodyTypeContribution = function (description) {
+    switch(description.bodyType || descriptionSchema.defaults.bodyType) {
+    case descriptionSchema.bodyTypes.average:
+      return 2;
+    case descriptionSchema.bodyTypes.muscular:
+      return 3;
+    case descriptionSchema.bodyTypes.overweight:
+    default:
+      return 1;
+    }
+  };
+
   var run = function (description) {
     description = description || {};
 
@@ -85,6 +97,7 @@ module.exports = (function () {
     estimatedBill += hairLengthContribution(description);
     estimatedBill += eyeColorContribution(description);
     estimatedBill += facialHairContribution(description);
+    estimatedBill += bodyTypeContribution(description);
 
     return Promise.resolve(Math.floor(estimatedBill));
   };
