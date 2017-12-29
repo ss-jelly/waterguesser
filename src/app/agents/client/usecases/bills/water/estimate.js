@@ -1,20 +1,41 @@
 
+var descriptionSchema = require('../../../schemas/description');
+
 module.exports = (function () {
-  var defaultDescription = {
-    age: 18,
-    height: 170,
+  var ageContribution = function (description) {
+    var ageCoefficient = 0.5;
+    return (description.age || descriptionSchema.defaults.age) * ageCoefficient;
   };
 
-  var ageCoefficient = 0.5;
-  var heightCoefficient= 0.25;
+  var heightContribution = function (description) {
+    var heightCoefficient = 0.25;
+    return (description.height || descriptionSchema.defaults.height) * heightCoefficient;
+  };
+
+  var hairColorContribution = function (description) {
+    switch(description.hairColor || descriptionSchema.defaults.hairColor) {
+    case descriptionSchema.hairColors.blonde:
+      return 2;
+    case descriptionSchema.hairColors.brown:
+      return 3;
+    case descriptionSchema.hairColors.grey:
+      return 4;
+    case descriptionSchema.hairColors.red:
+      return 5;
+    case descriptionSchema.hairColors.black:
+    default:
+      return 1;
+    }
+  };
 
   var run = function (description) {
     description = description || {};
 
     var estimatedBill = 0;
     
-    estimatedBill += (description.age || defaultDescription.age) * ageCoefficient;
-    estimatedBill += (description.height || defaultDescription.height) * heightCoefficient;
+    estimatedBill += ageContribution(description);
+    estimatedBill += heightContribution(description);
+    estimatedBill += hairColorContribution(description);
 
     return Promise.resolve(Math.floor(estimatedBill));
   };

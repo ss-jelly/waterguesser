@@ -12,9 +12,16 @@ module.exports = {
 
   theirAgeQuestion: 'یاشی',
   theirHeightQuestion: 'بویی',
+  theirHairColorQuestion: 'صچ رګی',
 
   estimate: 'طحمین عت بق لم',
-  
+
+  black: 'سیاه',
+  blonde: 'صری',
+  brown: 'قهوه',
+  red: 'قرمزی',
+  grey: 'بۉز',
+
   formatCurrency: function (moneyAmount) {
     return (moneyAmount || 0).toLocaleString('AR') + ' ' + 'آقچه';
   },

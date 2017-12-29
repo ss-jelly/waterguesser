@@ -1,0 +1,10 @@
+
+.molecules-dropdown-label {
+  display: block;
+  margin-bottom: 8px;
+  text-align: start;
+}
+
+.molecules-dropdown-select {
+  width: 100%;
+}
