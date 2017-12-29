@@ -4,4 +4,13 @@ module.exports = {
   rightToLeft: false,
 
   homePageTitle: 'Water Bill Estimator',
+
+  calculating: 'Estimating...',
+
+  waterBillEstimatedCostPreamble: 'Estimated water bill: ',
+  waterBillEstimatedCostPostamble: '',
+
+  formatCurrency: function (moneyAmount) {
+    return (moneyAmount || 0).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });
+  },
 };

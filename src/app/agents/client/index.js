@@ -1,12 +1,13 @@
 /* istanbul ignore next */
 
 module.exports = (function () {
-  var context = require('./framework/context');
   var browser = require('./framework/browser');
   
-  var bindRoutes = require('./ui/routes');
-  
-  bindRoutes(context({
+  var context = require('./framework/context')({
     locale: browser.queryParameter.get(browser.queryParameter.name.lang),
-  })).render();
+  });
+
+  context.usecases = require('./usecases')();
+  
+  require('./ui/routes')(context).render();
 })();
