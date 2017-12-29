@@ -31,5 +31,8 @@ describe('Description Entity Schema', function () {
     it('should have a default facialHair', function () {
       expect(descriptionSchema.defaults.facialHair).to.exist;
     });
+    it('should have a default bodyType', function () {
+      expect(descriptionSchema.defaults.bodyType).to.exist;
+    });
   });
 });

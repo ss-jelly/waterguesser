@@ -30,6 +30,12 @@ var facialHairs = {
   beard: 'beard',
 };
 
+var bodyTypes = {
+  average: 'average',
+  muscular: 'muscular',
+  overweight: 'overweight',
+};
+
 module.exports = ({
   defaults: {
     age: 18,
@@ -38,10 +44,12 @@ module.exports = ({
     hairLength: hairLengths.long,
     eyeColor: eyeColors.brown,
     facialHair: facialHairs.stubble,
+    bodyType: bodyTypes.overweight,
   },
 
   hairColors: hairColors,
   hairLengths: hairLengths,
   eyeColors: eyeColors,
   facialHairs: facialHairs,
+  bodyTypes: bodyTypes,
 });

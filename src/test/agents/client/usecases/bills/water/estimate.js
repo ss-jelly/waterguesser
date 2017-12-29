@@ -579,6 +579,84 @@ describe('Water Bill Estimate Usecase', function () {
     });
   });
 
+  describe('Body Type', function () {
+    it('should add to the bill estimate 1 for overweight', function (done) {
+      var expectedDifference = 0;
+      var inputBodyType = descriptionSchema.bodyTypes.overweight;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              bodyType: inputBodyType,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 2 for average', function (done) {
+      var expectedDifference = 1;
+      var inputBodyType = descriptionSchema.bodyTypes.average;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              bodyType: inputBodyType,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+    it('should add to the bill estimate 3 for muscular', function (done) {
+      var expectedDifference = 2;
+      var inputBodyType = descriptionSchema.bodyTypes.muscular;
+      expect(function () {
+        var usecase = createUsecase();
+        var defaultEstimate;
+        expect(usecase.run(descriptionSchema.defaults)
+  
+          .then(function (estimate) {
+            defaultEstimate = estimate;
+            return Promise.resolve({});
+          })
+  
+          .then(function () {
+            return usecase.run(Object.assign({}, descriptionSchema.defaults, {
+              bodyType: inputBodyType,
+            }));
+          })
+          
+          .then(function (estimate) {
+            return Promise.resolve(estimate - defaultEstimate);
+          })
+        ).to.eventually.equal(expectedDifference).and.notify(done);
+      }).to.not.throw();
+    });
+  });
+
   describe('Results', function () {
     it('should always be an integer', function () {
       it('should add to the bill estimate half the age as a dollar amount', function (done) {
