@@ -12,9 +12,16 @@ module.exports = {
 
   theirAgeQuestion: 'Yaşı',
   theirHeightQuestion: 'Boyu',
+  theirHairColorQuestion: 'Saç rengi',
   
   estimate: 'tahmin et bakalım',
   
+  black: 'Siyah',
+  blonde: 'Sarı',
+  brown: 'Kahverengi',
+  red: 'Kırmızı',
+  grey: 'Boz',
+
   formatCurrency: function (moneyAmount) {
     return (moneyAmount || 0).toLocaleString('tr', { style: 'currency', currency: 'TRY' });
   },
