@@ -2,5 +2,5 @@
 module.exports = {
   localizationCode: 'en',
 
-  homePageTitle: 'Home Page Title',
+  homePageTitle: 'Water Bill Estimator',
 };

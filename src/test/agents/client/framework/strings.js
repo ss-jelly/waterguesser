@@ -3,6 +3,8 @@ var chai = require('chai');
 var mocha = require('mocha');
 
 var stringsEn = require('../../../../app/agents/client/framework/strings/en');
+var stringsTr = require('../../../../app/agents/client/framework/strings/tr');
+var stringsOsm = require('../../../../app/agents/client/framework/strings/osm');
 var createStrings = require('../../../../app/agents/client/framework/strings');
 
 var expect = chai.expect;
@@ -32,6 +34,17 @@ describe('String Resources', function () {
     it('should be able to choose English localization', function () {
       var strings = createStrings(stringsEn.localizationCode);
       expect(strings.localizationCode).to.deep.equal(stringsEn.localizationCode);
+    });
+
+
+    it('should be able to choose Turkce localization', function () {
+      var strings = createStrings(stringsTr.localizationCode);
+      expect(strings.localizationCode).to.deep.equal(stringsTr.localizationCode);
+    });
+
+    it('should be able to choose Osmanlica localization', function () {
+      var strings = createStrings(stringsOsm.localizationCode);
+      expect(strings.localizationCode).to.deep.equal(stringsOsm.localizationCode);
     });
   });
 });
