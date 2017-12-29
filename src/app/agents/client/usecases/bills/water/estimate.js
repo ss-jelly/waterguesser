@@ -60,6 +60,20 @@ module.exports = (function () {
     }
   };
 
+  var facialHairContribution = function (description) {
+    switch(description.facialHair || descriptionSchema.defaults.facialHair) {
+    case descriptionSchema.facialHairs.stubble:
+      return 2;
+    case descriptionSchema.facialHairs.goatee:
+      return 3;
+    case descriptionSchema.facialHairs.beard:
+      return 4;
+    case descriptionSchema.facialHairs.moustache:
+    default:
+      return 1;
+    }
+  };
+
   var run = function (description) {
     description = description || {};
 
@@ -70,6 +84,7 @@ module.exports = (function () {
     estimatedBill += hairColorContribution(description);
     estimatedBill += hairLengthContribution(description);
     estimatedBill += eyeColorContribution(description);
+    estimatedBill += facialHairContribution(description);
 
     return Promise.resolve(Math.floor(estimatedBill));
   };

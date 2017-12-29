@@ -23,6 +23,13 @@ var eyeColors = {
   ela: 'ela',
 };
 
+var facialHairs = {
+  stubble: 'stubble',
+  moustache: 'moustache',
+  goatee: 'goatee',
+  beard: 'beard',
+};
+
 module.exports = ({
   defaults: {
     age: 18,
@@ -30,9 +37,11 @@ module.exports = ({
     hairColor: hairColors.black,
     hairLength: hairLengths.long,
     eyeColor: eyeColors.brown,
+    facialHair: facialHairs.stubble,
   },
 
   hairColors: hairColors,
   hairLengths: hairLengths,
   eyeColors: eyeColors,
+  facialHairs: facialHairs,
 });
