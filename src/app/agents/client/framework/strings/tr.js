@@ -14,6 +14,7 @@ module.exports = {
   theirHeightQuestion: 'Boyu',
   theirHairColorQuestion: 'Saç rengi',
   theirHairLengthQuestion: 'Saç uzunlugu',
+  theirEyeColorQuestion: 'Göz rengi',
   
   estimate: 'tahmin et bakalım',
   
@@ -22,6 +23,11 @@ module.exports = {
   brown: 'Kahverengi',
   red: 'Kırmızı',
   grey: 'Boz',
+
+  green: 'Yeşil',
+  blue: 'Mavi',
+  ela: 'Ela',
+  kehribar: 'Kehribar',
 
   long: 'Uzun',
   middle: 'Orta',

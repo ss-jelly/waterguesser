@@ -14,6 +14,7 @@ module.exports = {
   theirHeightQuestion: 'بویی',
   theirHairColorQuestion: 'صچ رګی',
   theirHairLengthQuestion: 'صچ وزون لغی',
+  theirEyeColorQuestion: 'گۉٍز رګی',
 
   estimate: 'طحمین عت بق لم',
 
@@ -22,6 +23,11 @@ module.exports = {
   brown: 'قهوه',
   red: 'قرمزی',
   grey: 'بۉز',
+
+  green: 'یشیل',
+  blue: 'ماؤی',
+  ela: 'هلا',
+  kehribar: 'کهریبار',
 
   long: 'وزون',
   middle: 'ۉرتة',
