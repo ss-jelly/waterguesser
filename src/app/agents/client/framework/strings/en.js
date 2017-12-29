@@ -16,6 +16,7 @@ module.exports = {
   theirHairLengthQuestion: 'Hair Length',
   theirEyeColorQuestion: 'Eye Color',
   theirFacialHairQuestion: 'Facial Hair',
+  theirBodyTypeQuestion: 'Body Type',
 
   estimate: 'estimate',
 
@@ -37,6 +38,10 @@ module.exports = {
   moustache: 'Moustache',
   goatee: 'Goatee',
   beard: 'Beard',
+
+  average: 'Average',
+  muscular: 'Muscular',
+  overweight: 'Overweight',
 
   formatCurrency: function (moneyAmount) {
     return (moneyAmount || 0).toLocaleString('en-GB', { style: 'currency', currency: 'GBP' });

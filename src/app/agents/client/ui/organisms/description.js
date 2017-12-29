@@ -8,6 +8,7 @@ var hairColor = require('../molecules/hair-color');
 var hairLength = require('../molecules/hair-length');
 var eyeColor = require('../molecules/eye-color');
 var facialHair = require('../molecules/facial-hair');
+var bodyType = require('../molecules/body-type');
 var submit = require('../molecules/submit');
 
 module.exports = (function (context, properties) {
@@ -19,5 +20,6 @@ module.exports = (function (context, properties) {
     hairLength(context)+
     eyeColor(context)+
     facialHair(context)+
+    bodyType(context)+
     submit(context));
 });
